@@ -9,6 +9,37 @@
     border: 1px solid #d0d0d0;
 }
 
+.rotation-start {
+    animation: rotation 0.5s linear;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotation-end {
+    animation: rotation-reverse 1s forwards;
+}
+
+@keyframes rotation-reverse {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+        height: 0px;
+        width: 0px;
+        display: none;
+    }
+}
+
 #select-box {
     display: flex;
     align-items: center;

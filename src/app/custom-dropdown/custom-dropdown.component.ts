@@ -25,6 +25,7 @@ export class CustomDropdownComponent implements OnInit {
   }
 
   isDownArrowEnabled: boolean = true;
+  initialLoad: boolean = true;
 
   constructor() {
   }
@@ -32,11 +33,12 @@ export class CustomDropdownComponent implements OnInit {
   ngOnInit() { }
 
   toggleArrow() {
+    this.initialLoad = false;
     this.isDownArrowEnabled = !this.isDownArrowEnabled;
   }
 
   optionSelection(option: any) {
-    this.isDownArrowEnabled = true;
+    this.toggleArrow();
     this._currentSelection = option?.[this.displayAttribute];
     this.onSelection.emit(option);
   }
