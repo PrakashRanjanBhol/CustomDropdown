@@ -4,11 +4,11 @@
     </div>
     <div id="dialog1" [ngClass]="isDownArrowEnabled ? 'down-arrow' : 'up-arrow'"></div>
 </div>
-<ng-container *ngIf="!initialLoad">
-    <div id="select-options" [ngClass]="!isDownArrowEnabled ? 'rotation-start' : 'rotation-end'">
+<ng-container *ngIf="!isDownArrowEnabled">
+    <div id="select-options">
         <div *ngFor="let option of options" (click)="optionSelection(option)"
             [ngClass]="{'selected-option-bg-color': _currentSelection === option?.[displayAttribute]}">
-            {{option?.[displayAttribute]}}
+            <span>{{option?.[displayAttribute]}}</span>
         </div>
     </div>
 </ng-container>
